@@ -2,56 +2,168 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Персональный План Питания</title>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <div class="container">
-      <form id="nutrition-form">
-        <h1>Анкета для составления плана питания</h1>
+      <div class="form-wrapper">
+        <form id="nutrition-form">
+          <h1>Создание индивидуального плана питания</h1>
 
-        <div class="personal-info">
-          <input type="text" name="name" placeholder="ФИО" required />
-          <input type="number" name="age" placeholder="Возраст" required />
-          <input type="number" name="height" placeholder="Рост (см)" required />
-          <input type="number" name="weight" placeholder="Вес (кг)" required />
-        </div>
+          <div class="section personal-info">
+            <h2>Личные данные</h2>
+            <div class="form-group">
+              <label for="name">ФИО</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Введите ваше полное имя"
+              />
+            </div>
 
-        <div class="goal-selection">
-          <h3>Выберите цель:</h3>
-          <select name="goal" required>
-            <option value="lose">Похудеть</option>
-            <option value="gain">Набрать мышечную массу</option>
-            <option value="maintain">Поддержание веса</option>
-          </select>
-        </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="age">Возраст</label>
+                <input
+                  type="number"
+                  id="age"
+                  name="age"
+                  required
+                  min="12"
+                  max="100"
+                  placeholder="Ваш возраст"
+                />
+              </div>
 
-        <div class="activity-level">
-          <h3>Уровень активности:</h3>
-          <select name="activity" required>
-            <option value="sedentary">Сидячий образ жизни</option>
-            <option value="light">Легкая активность</option>
-            <option value="moderate">Средняя активность</option>
-            <option value="high">Высокая активность</option>
-          </select>
-        </div>
+              <div class="form-group">
+                <label for="gender">Пол</label>
+                <select id="gender" name="gender" required>
+                  <option value="">Выберите пол</option>
+                  <option value="male">Мужской</option>
+                  <option value="female">Женский</option>
+                </select>
+              </div>
+            </div>
 
-        <div class="food-preferences">
-          <h3>Выберите продукты, которые вы едите:</h3>
-          <div class="food-grid">
-            <!-- Динамически генерируемый список продуктов -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="weight">Вес (кг)</label>
+                <input
+                  type="number"
+                  id="weight"
+                  name="weight"
+                  required
+                  min="30"
+                  max="300"
+                  placeholder="Ваш вес"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="height">Рост (см)</label>
+                <input
+                  type="number"
+                  id="height"
+                  name="height"
+                  required
+                  min="100"
+                  max="250"
+                  placeholder="Ваш рост"
+                />
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div class="allergies">
-          <h3>Аллергии и противопоказания:</h3>
-          <textarea name="allergies" placeholder="Укажите allergии"></textarea>
-        </div>
+          <div class="section fitness-goals">
+            <h2>Цели</h2>
+            <div class="form-group">
+              <label>Основная цель</label>
+              <div class="goal-options">
+                <div class="goal-option">
+                  <input
+                    type="radio"
+                    id="goal-lose"
+                    name="goal"
+                    value="lose"
+                    required
+                  />
+                  <label for="goal-lose">Похудение</label>
+                </div>
+                <div class="goal-option">
+                  <input type="radio" id="goal-gain" name="goal" value="gain" />
+                  <label for="goal-gain">Набор мышечной массы</label>
+                </div>
+                <div class="goal-option">
+                  <input
+                    type="radio"
+                    id="goal-maintain"
+                    name="goal"
+                    value="maintain"
+                  />
+                  <label for="goal-maintain">Поддержание веса</label>
+                </div>
+              </div>
+            </div>
 
-        <button type="submit">Отправить анкету</button>
-      </form>
+            <div class="form-group">
+              <label for="activity-level">Уровень активности</label>
+              <select id="activity-level" name="activityLevel" required>
+                <option value="">Выберите уровень активности</option>
+                <option value="sedentary">Сидячий образ жизни</option>
+                <option value="light">Легкая активность</option>
+                <option value="moderate">Средняя активность</option>
+                <option value="high">Высокая активность</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="section food-preferences">
+            <h2>Предпочтения в питании</h2>
+            <div class="form-group">
+              <label>Выберите продукты, которые вы едите:</label>
+              <div class="food-grid">
+                <!-- Динамически заполняется через JavaScript -->
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="allergies">Аллергии и противопоказания</label>
+              <textarea
+                id="allergies"
+                name="allergies"
+                placeholder="Укажите известные аллергии и противопоказания"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="section additional-info">
+            <h2>Дополнительная информация</h2>
+            <div class="form-group">
+              <label for="medical-conditions"
+                >Медицинские противопоказания</label
+              >
+              <textarea
+                id="medical-conditions"
+                name="medicalConditions"
+                placeholder="Есть ли у вас какие-либо медицинские противопоказания?"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">
+              Создать план питания
+            </button>
+            <button type="reset" class="btn-secondary">Очистить форму</button>
+          </div>
+        </form>
+      </div>
     </div>
 
-    <script src="./js/main.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
