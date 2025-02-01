@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Персональный План Питания</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form id="nutrition-form">
+        <h1>Анкета для составления плана питания</h1>
+
+        <div class="personal-info">
+          <input type="text" name="name" placeholder="ФИО" required />
+          <input type="number" name="age" placeholder="Возраст" required />
+          <input type="number" name="height" placeholder="Рост (см)" required />
+          <input type="number" name="weight" placeholder="Вес (кг)" required />
+        </div>
+
+        <div class="goal-selection">
+          <h3>Выберите цель:</h3>
+          <select name="goal" required>
+            <option value="lose">Похудеть</option>
+            <option value="gain">Набрать мышечную массу</option>
+            <option value="maintain">Поддержание веса</option>
+          </select>
+        </div>
+
+        <div class="activity-level">
+          <h3>Уровень активности:</h3>
+          <select name="activity" required>
+            <option value="sedentary">Сидячий образ жизни</option>
+            <option value="light">Легкая активность</option>
+            <option value="moderate">Средняя активность</option>
+            <option value="high">Высокая активность</option>
+          </select>
+        </div>
+
+        <div class="food-preferences">
+          <h3>Выберите продукты, которые вы едите:</h3>
+          <div class="food-grid">
+            <!-- Динамически генерируемый список продуктов -->
+          </div>
+        </div>
+
+        <div class="allergies">
+          <h3>Аллергии и противопоказания:</h3>
+          <textarea name="allergies" placeholder="Укажите allergии"></textarea>
+        </div>
+
+        <button type="submit">Отправить анкету</button>
+      </form>
+    </div>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
