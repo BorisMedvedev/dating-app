@@ -383,6 +383,7 @@ h2 {
 .results-section {
   background-color: #F1F8E9;
   border-left: 4px solid var(--accent-color);
+  color: #3A3A3A;
 }
 
 /* Темная тема */
