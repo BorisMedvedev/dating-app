@@ -124,6 +124,48 @@ textarea {
   color: var(--text-color);
 }
 
+/* Стили для списка продуктов */
+.food-preferences .food-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.food-category {
+  background-color: #f4f4f4;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.food-category h3 {
+  margin-bottom: 10px;
+  color: #333;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.food-item {
+  display: flex;
+  align-items: center;
+}
+
+.food-item input {
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
 @media (max-width: 768px) {
   .form-row {
     flex-direction: column;
